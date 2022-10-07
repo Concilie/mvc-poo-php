@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /projet-2/
+
+RewriteCond %{THE_REQUEST} /views/([^\s?]*) [NC]
+RewriteRule ^ %1 [L,NE,R=302]
+
+RewriteRule ^((?!public/).*)$ views/$1 [L,NC]
